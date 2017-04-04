@@ -10,7 +10,7 @@ angular.module('app.routes', [])
     
   
 
-      .state('tabsController.vipinfo', {
+  .state('tabsController.vipinfo', {
     url: '/page2',
     views: {
       'tab1': {
