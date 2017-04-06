@@ -5,35 +5,23 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-
-
-
-
-
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&sensor=false"></script>
-    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
-    <script src="http://devfanatic.com/blog/ion/ion-place-autocomplete.js"></script>
-
-    <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
-    <link href="http://devfanatic.com/blog/ion/ion-place-autocomplete.css" rel="stylesheet">
-
+    <script src="http://maps.google.com/maps/api/js?libraries=places&region=uk&language=en&sensor=false"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
-    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIDDYFxRipatLJJtk3SwDaTWAwIE-Zk_Y&sensor=true"></script>
-
-
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-    
-
-    <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
     
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    
     
 
     <style type="text/css">
@@ -67,11 +55,24 @@
       .map-block{
           height: 300px;
           width: 100%;
-          margin-bottom:0px;
           background-color: ;
       }
-      .angular-google-map-container { 
-        height: 100%; 
+
+      .search-box{ 
+          max-width:300px;
+          z-index: 1;
+          background-color: rgba(0,0,0,0.3);
+          position: relative;
+          color:#000;
+          float: right;
+          margin-right: 10px;
+          height: 50px;
+          margin-top: 10px;
+          margin-bottom: -45px;
+          border:2px solid;
+          border-color: rgba(0,0,0,0.8);
+          border-radius: 2px;
+          padding-left:10px;
       }
 
     </style>
@@ -109,7 +110,6 @@
       </ion-header-bar>
       <ion-content ng-controller="menuCtrl" padding="true" class="side-menu-left has-header ">
         <a ui-sref="tabsController.vipinfo" menu-close="" id="menu-button1" style="text-align:left;" class="button button-positive  button-block button-clear icon-left ion-ios-home" data-componentid="button1">Home</a>
-        <a ui-sref="tabsController.search" menu-close="" id="menu-button5" style="text-align:left;" class="button button-positive  button-block button-clear icon-left ion-search" data-componentid="button5">Search</a>
         <a ui-sref="addInfo" menu-close="" id="menu-button8" style="text-align:left;" class="button button-positive  button-block button-clear icon-left ion-location" data-componentid="button8">Add Info</a>
         <a ui-sref="settings" menu-close="" id="menu-button7" style="text-align:left;" class="button button-positive  button-block button-clear icon-left ion-settings" data-componentid="button7">Settings</a>
         <a ui-sref="tabsController.about" menu-close="" id="menu-button6" style="text-align:left;" class="button button-positive  button-block button-clear icon-left ion-android-alert" data-componentid="button6">About</a>
