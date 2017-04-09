@@ -175,7 +175,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('MapCtrl', function($scope, $state, $cordovaGeolocation) {
+.controller('MapCtrl', function($scope, $state, $cordovaGeolocation, $ionicPopup, $ionicLoading) {
   var options = {timeout: 10000, enableHighAccuracy: true};
  
   $cordovaGeolocation.getCurrentPosition(options).then(function(position){
@@ -211,6 +211,43 @@ angular.module('starter.controllers', [])
   }, function(error){
     console.log("Could not get location");
   });
-})
 
-;
+  /***** serching the location **************************/
+
+
+  /*
+    // Triggered on a button click, or some other target
+    $scope.showSearch = function() {
+    $scope.data = {}
+
+   // An elaborate, custom popup
+   var myPopup = $ionicPopup.show({
+     template: '<input type="text" ng-model="searchName">',
+     title: 'Enter The Location',
+     subTitle: 'name/address',
+     scope: $scope,
+     buttons: [
+       { text: 'Close' },
+       {
+         text: '<b>Find</b>',
+         type: 'button-positive',
+         onTap: function(e) {
+           if (!$scope.searchName) {
+             //don't allow the user to close unless he enters wifi password
+             e.preventDefault();
+           } else {
+             return $scope.searchName;
+           }
+         }
+       },
+     ]
+   });
+    
+   myPopup.then(function(res) { console.log('Tapped!', res); });
+   $timeout(function() { myPopup.close(); }, 3000); };
+    */
+
+
+});
+
+
