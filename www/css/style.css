@@ -82,6 +82,10 @@ p {
     height: 100%;
 }
  
+.text-field{
+    padding-right: 25px;
+}
+
 #map {
     width: 100%;
     height: 100%;
