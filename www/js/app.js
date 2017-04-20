@@ -146,6 +146,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
                 template: ''
             }
         }
+    })  
+
+    .state('app.place', {
+        url: '/place',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/place.html',
+                controller: 'PlaceCtrl'
+            },
+            'fabContent': {
+                template: ''
+            }
+        }
     })    
     ;
 

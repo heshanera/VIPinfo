@@ -311,4 +311,8 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('PlaceCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
+    
+
+})
 

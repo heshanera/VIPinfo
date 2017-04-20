@@ -106,3 +106,23 @@ p {
 .Hide{
     display: none !important;
 }
+
+/* Place
+==================================*/
+
+.place-img{
+    height:300px !important;
+    background-position: center; 
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-color: #aaa;
+}
+
+.more-info-link{
+    font-weight: bolder;
+    color:#444;
+    float:right;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    padding-bottom: 20px; 
+}
