@@ -197,10 +197,6 @@ angular.module('starter.controllers', [])
           animation: google.maps.Animation.DROP,
           position: latLng
       });
-
-      var infoWindow = new google.maps.InfoWindow({
-            content: "Here I am!"
-        });
        
         google.maps.event.addListener(marker, 'click', function () {
 
