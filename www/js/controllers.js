@@ -184,7 +184,7 @@ angular.module('starter.controllers', [])
  
     var mapOptions = {
       center: latLng,
-      zoom: 18,
+      zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
  
@@ -203,7 +203,14 @@ angular.module('starter.controllers', [])
         });
        
         google.maps.event.addListener(marker, 'click', function () {
-            infoWindow.open($scope.map, marker);
+
+            var lat = position.coords.latitude;
+            var lng = position.coords.longitude;
+            $scope.setMarker(lat+0.0050,lng+0.0050);
+            $scope.setMarker(lat+0.0010,lng+0.0010);
+            $scope.setMarker(lat+0.0030,lng-0.0025);
+            $scope.setMarker(lat-0.0050,lng+0.0026);
+            $scope.setMarker(lat-0.0025,lng-0.0056);
         });      
      
     });
@@ -246,6 +253,28 @@ angular.module('starter.controllers', [])
    myPopup.then(function(res) { console.log('Tapped!', res); });
    $timeout(function() { myPopup.close(); }, 3000); };
     */
+
+  /***** setting up location markers **************************/
+
+  $scope.setMarker = function(lat,lng){
+
+      var latLng = new google.maps.LatLng(lat,lng);
+
+      var locMarker = new google.maps.Marker({
+          map: $scope.map,
+          animation: google.maps.Animation.DROP,
+          position: latLng
+      });
+
+      var infoWindow = new google.maps.InfoWindow({
+          content: "Here I am!"
+      });
+       
+      google.maps.event.addListener(locMarker, 'click', function () {
+          infoWindow.open($scope.map, locMarker);
+      }); 
+
+  }
 
 
 });
