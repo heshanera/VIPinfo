@@ -134,6 +134,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
             }
         }
     })
+
+    .state('app.places', {
+        url: '/places',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/places.html',
+                controller: 'PlacesCtrl'
+            },
+            'fabContent': {
+                template: ''
+            }
+        }
+    })    
     ;
 
     // if none of the above states are matched, use this as the fallback

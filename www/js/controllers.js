@@ -190,6 +190,7 @@ angular.module('starter.controllers', [])
  
     $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
+
     google.maps.event.addListenerOnce($scope.map, 'idle', function(){
      
       var marker = new google.maps.Marker({
@@ -198,16 +199,25 @@ angular.module('starter.controllers', [])
           position: latLng
       });
        
-        google.maps.event.addListener(marker, 'click', function () {
 
-            var lat = position.coords.latitude;
-            var lng = position.coords.longitude;
-            $scope.setMarker(lat+0.0050,lng+0.0050);
-            $scope.setMarker(lat+0.0010,lng+0.0010);
-            $scope.setMarker(lat+0.0030,lng-0.0025);
-            $scope.setMarker(lat-0.0050,lng+0.0026);
-            $scope.setMarker(lat-0.0025,lng-0.0056);
-        });      
+      var markerArray = new Array(); 
+      google.maps.event.addListener(marker, 'click', function () {
+
+          var noOfMarkers = markerArray.length;
+          if (noOfMarkers > 0){
+            for(var i = 0; i < noOfMarkers; i++) {
+              markerArray[i].setMap(null);    
+            }  
+          }
+
+          var lat = position.coords.latitude;
+          var lng = position.coords.longitude;
+          $scope.setMarker(lat+0.0050,lng+0.0050,markerArray);
+          $scope.setMarker(lat+0.0010,lng+0.0010,markerArray);
+          $scope.setMarker(lat+0.0030,lng-0.0025,markerArray);
+          $scope.setMarker(lat-0.0050,lng+0.0026,markerArray);
+          $scope.setMarker(lat-0.0025,lng-0.0056,markerArray);
+      });      
      
     });
  
@@ -252,27 +262,53 @@ angular.module('starter.controllers', [])
 
   /***** setting up location markers **************************/
 
-  $scope.setMarker = function(lat,lng){
+  $scope.setMarker = function(lat,lng,markerArray){
 
       var latLng = new google.maps.LatLng(lat,lng);
 
-      var locMarker = new google.maps.Marker({
+      var marker = new google.maps.Marker({
           map: $scope.map,
           animation: google.maps.Animation.DROP,
           position: latLng
       });
-
-      var infoWindow = new google.maps.InfoWindow({
-          content: "Here I am!"
-      });
+      marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
        
-      google.maps.event.addListener(locMarker, 'click', function () {
-          infoWindow.open($scope.map, locMarker);
+      google.maps.event.addListener(marker, 'click', function () {
+          $state.go("app.places"); 
       }); 
+
+      markerArray.push(marker);
+
+  }
+
+  /***** show places in the selected location **************************/
+
+  $scope.showPlaces = function(){
+
+      
 
   }
 
 
-});
+})
+
+.controller('PlacesCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
+    $scope.$parent.showHeader();
+    $scope.$parent.clearFabs();
+    $scope.isExpanded = true;
+    $scope.$parent.setExpanded(true);
+    $scope.$parent.setHeaderFab(false);
+
+    // Activate ink for controller
+    ionicMaterialInk.displayEffect();
+
+    ionicMaterialMotion.pushDown({
+        selector: '.push-down'
+    });
+    ionicMaterialMotion.fadeSlideInRight({
+        selector: '.animate-fade-slide-in .item'
+    });
+
+})
 
 
