@@ -190,7 +190,7 @@ angular.module('starter.controllers', [])
  
     $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-
+    
     google.maps.event.addListenerOnce($scope.map, 'idle', function(){
      
       var marker = new google.maps.Marker({
@@ -198,7 +198,23 @@ angular.module('starter.controllers', [])
           animation: google.maps.Animation.DROP,
           position: latLng
       });
-       
+
+
+        google.maps.event.addListener($scope.map, 'click', function(event) {
+         placeMarker(event.latLng);
+      });
+
+      function placeMarker(location) {
+          var marker1 = new google.maps.Marker({
+              position: location, 
+              map:$scope.map
+          });
+          marker1.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png') 
+          google.maps.event.addListener(marker1, 'click', function () {
+          $state.go("app.places");
+
+      }); 
+      }
 
       var markerArray = new Array(); 
       google.maps.event.addListener(marker, 'click', function () {
