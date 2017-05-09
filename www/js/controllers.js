@@ -117,7 +117,7 @@ angular.module('starter.controllers', [])
  
     var mapOptions = {
       center: latLng,
-      zoom: 15,
+      zoom: 11,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
  
@@ -188,7 +188,6 @@ angular.module('starter.controllers', [])
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.isExpanded = true;
-    $scope.$parent.setExpanded(true);
     $scope.$parent.setHeaderFab('right');
 
     $timeout(function() {
@@ -205,7 +204,6 @@ angular.module('starter.controllers', [])
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.isExpanded = true;
-    $scope.$parent.setExpanded(true);
     $scope.$parent.setHeaderFab(false);
 
     // Activate ink for controller
