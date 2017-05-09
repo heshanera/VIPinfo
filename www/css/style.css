@@ -145,7 +145,8 @@ p {
     float:none;
     width: 100%;
     height: 400px;
-
+    margin-bottom: 30px;
+    border:5px solid rgba(0, 0, 0, 0.7);
 }
 
 .text-field2{
@@ -163,4 +164,10 @@ p {
     margin-top: 25px;
     width: 100%;
     height: 100px;
+}
+
+.ico-size1{
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
 }
