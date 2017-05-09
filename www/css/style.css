@@ -110,6 +110,10 @@ p {
 /* Place
 ==================================*/
 
+.places-container{
+    margin-top: -20px !important;
+}
+
 .place-img{
     height:300px !important;
     background-position: center; 
