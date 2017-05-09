@@ -1,11 +1,16 @@
-<ion-view view-title="Add Information">
-    <ion-content ng-class="{expanded:isExpanded}">
+<ion-view view-title="Add">
+    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
         <div class="content has-header container">
             <div class="list animate-fade-slide-in-right">
                 
-            <div class="text-field2">
+            <div class="item item-input">
                 <ion-md-input placeholder="Building/Street Name"  type="text"></ion-md-input>
             </div>
+
+            <label class="item item-input">
+              <i class="icon ion-search placeholder-icon"></i>
+              <input type="search" placeholder="Search">
+            </label>
                 
             <div id="map2" data-tap-disabled="true"></div>
 

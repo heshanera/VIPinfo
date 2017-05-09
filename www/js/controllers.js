@@ -101,11 +101,6 @@ angular.module('starter.controllers', [])
     $scope.$parent.clearFabs();
     $scope.$parent.setHeaderFab('left');
 
-    // Delay expansion
-    $timeout(function() {
-        $scope.isExpanded = true;
-        $scope.$parent.setExpanded(true);
-    }, 300);
 
     // Set Motion
     ionicMaterialMotion.fadeSlideInRight();
@@ -141,6 +136,7 @@ angular.module('starter.controllers', [])
         google.maps.event.addListener($scope.map, 'click', function(event) {
          placeMarker(event.latLng);
       });
+
 
       function placeMarker(location) {
           var marker1 = new google.maps.Marker({
@@ -361,7 +357,6 @@ angular.module('starter.controllers', [])
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.isExpanded = true;
-    $scope.$parent.setExpanded(true);
     $scope.$parent.setHeaderFab(false);
 
     // Activate ink for controller
@@ -380,17 +375,16 @@ angular.module('starter.controllers', [])
     
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
-    $scope.$parent.setHeaderFab('left');
+    $scope.isExpanded = true;
+    $scope.$parent.setHeaderFab(false);
 
-    // Delay expansion
-    $timeout(function() {
-        $scope.isExpanded = true;
-        $scope.$parent.setExpanded(true);
-    }, 300);
-
-    // Set Motion
-    ionicMaterialMotion.fadeSlideInRight();
-
-    // Set Ink
+    // Activate ink for controller
     ionicMaterialInk.displayEffect();
+
+    ionicMaterialMotion.pushDown({
+        selector: '.push-down'
+    });
+    ionicMaterialMotion.fadeSlideInRight({
+        selector: '.animate-fade-slide-in .item'
+    });
 })
