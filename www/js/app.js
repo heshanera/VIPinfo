@@ -68,12 +68,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
         }
     })
 
-    .state('app.friends', {
-        url: '/friends',
+    .state('app.addInfo', {
+        url: '/addInfo',
         views: {
             'menuContent': {
-                templateUrl: 'templates/friends.html',
-                controller: 'FriendsCtrl'
+                templateUrl: 'templates/addInfo.html',
+                controller: 'AddInfoCtrl'
             },
             'fabContent': {
                 template: '<button id="fab-friends" class="button button-fab button-fab-top-left expanded button-energized-900 spin"><i class="icon ion-chatbubbles"></i></button>',

@@ -95,8 +95,8 @@ angular.module('starter.controllers', [])
     ionicMaterialInk.displayEffect();
 })
 
-.controller('FriendsCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
-    // Set Header
+.controller('AddInfoCtrl', function($scope, $state, $cordovaGeolocation, $ionicPopup, $ionicLoading, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
+    // Set Header 
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.$parent.setHeaderFab('left');
@@ -112,6 +112,55 @@ angular.module('starter.controllers', [])
 
     // Set Ink
     ionicMaterialInk.displayEffect();
+
+
+    var options = {timeout: 10000, enableHighAccuracy: true};
+ 
+    $cordovaGeolocation.getCurrentPosition(options).then(function(position){
+ 
+    var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+ 
+    var mapOptions = {
+      center: latLng,
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+ 
+    $scope.map = new google.maps.Map(document.getElementById("map2"), mapOptions);
+
+    
+    google.maps.event.addListenerOnce($scope.map, 'idle', function(){
+     
+      var marker = new google.maps.Marker({
+          map: $scope.map,
+          animation: google.maps.Animation.DROP,
+          position: latLng
+      });
+
+
+        google.maps.event.addListener($scope.map, 'click', function(event) {
+         placeMarker(event.latLng);
+      });
+
+      function placeMarker(location) {
+          var marker1 = new google.maps.Marker({
+              position: location, 
+              map:$scope.map
+          });
+          marker1.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png') 
+          google.maps.event.addListener(marker1, 'click', function () {
+          $state.go("app.places");
+
+      }); 
+      }
+
+      
+    });
+ 
+  }, function(error){
+    console.log("Could not get location");
+  });
+
 })
 
 .controller('ProfileCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
@@ -331,4 +380,3 @@ angular.module('starter.controllers', [])
     
 
 })
-
