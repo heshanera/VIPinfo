@@ -171,3 +171,20 @@ p {
     font-weight: bold;
     margin-right: 10px;
 }
+
+.ico-pos{
+    margin-top: -60px !important;
+    position: relative;
+}
+
+.input-text-color{
+    color: white !important;
+    font-size: 1.2em !important;
+    line-height: 1.2em !important;
+}
+
+.input-text-area{
+    padding-top:10px;
+    height:100px;
+    background-color: rgba(0, 0, 0, 0.0);
+}
