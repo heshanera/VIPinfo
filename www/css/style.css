@@ -134,7 +134,7 @@ p {
     width: 100%;
     padding-right: 20px;
     padding-left: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     padding-top: 35px;
     margin-top: -45px;
     margin-bottom: 0px;
@@ -179,12 +179,32 @@ p {
 
 .input-text-color{
     color: white !important;
-    font-size: 1.2em !important;
-    line-height: 1.2em !important;
+    font-size: 1.1em !important;
+    line-height: 1.1em !important;
 }
 
 .input-text-area{
     padding-top:10px;
     height:100px;
     background-color: rgba(0, 0, 0, 0.0);
+}
+
+.send-info-button{
+    margin-top: 10px;
+    background-color:#E65100;
+    padding:8px;
+    color:#fff;
+    width:150px;
+    float: right;
+    border:none;
+    transition-duration: 200ms; 
+    border:3px solid #E65100;
+    font-size: 1.2em;
+}
+
+.send-info-button:hover{
+    cursor: pointer;
+    background-color: #fff;
+    color:#E65100;
+    transition-duration: 200ms;
 }
