@@ -1,16 +1,17 @@
 <ion-view  view-title="Local Map">
     <ion-content>
 
+
     <div class="tabs tabs-dark tabs-icon-bottom">
-            <a ui-sref="app.activity" class="tab-item">
-                <i class="icon ion-arrow-graph-up-right"></i> Activity
-            </a>
-            <a ui-sref="app.friends" class="tab-item">
-                <i class="icon ion-android-people"></i> Friends
-            </a>
-            <a ui-sref="app.gallery" class="tab-item">
-                <i class="icon ion-images"></i> Photos
-            </a>
+        <a ui-sref="app.activity" class="tab-item">
+            <i class="icon icon-size2 ion-edit"></i> Edit
+        </a>
+        <a ui-sref="app.activity" class="tab-item">
+            <i class="icon ion-android-navigate"></i> Activity
+        </a>
+        <a ui-sref="app.favorites" class="tab-item">
+            <i class="icon ion-images"></i> Favorites
+        </a>
     </div>
     
     <ion-nav-view name="searchMap" class="view-container" nav-view-transition="ios" nav-view-direction="back" nav-swipe="">
