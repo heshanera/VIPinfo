@@ -351,7 +351,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('PlacesCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion, $cordovaSQLite) {
+.controller('PlacesCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.isExpanded = true;
@@ -366,10 +366,6 @@ angular.module('starter.controllers', [])
     ionicMaterialMotion.fadeSlideInRight({
         selector: '.animate-fade-slide-in .item'
     });
-
-    /***** loading the information about locations ********/
-
-    
 
 })
 
