@@ -160,7 +160,7 @@ p {
     height: 250px;
     margin-bottom: 30px;
     border:0.001em solid rgba(0, 0, 0, 0.2);
-    box-shadow: 3px 3px 1px #444;
+    box-shadow: 2px 2px 1px #444;
 }
 
 .text-field2{
@@ -172,7 +172,7 @@ p {
     background-color: rgba(0, 0, 0, 0.7);
     color:#fff !important;
     margin-bottom: 20px;
-    box-shadow: 3px 3px 1px #444;
+    box-shadow: 2px 2px 1px #444;
 }
 
 .txt-area{
@@ -207,23 +207,43 @@ p {
 .send-info-button{
     margin-top: 10px;
     background-color:#E65100;
-    padding:10px;
     color:#fff;
     width:150px;
-    float: right;
+    float: left;
     border:none;
     transition-duration: 200ms; 
-    font-size: 1.2em;
-    box-shadow: 3px 3px 1px #444;
 }
 
-.send-info-button:hover{
-    cursor: pointer;
-    background-color: #E64000;
-    transition-duration: 200ms;
-}
 
 .addInfoText{
     color:#000;
     font-size: 1em;
+}
+
+/** Profile
+==================================*/
+
+.profile-icon{
+    float: left !important;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.profile-icon2{
+    font-size: 20px !important;
+
+}
+
+.list-width{
+    width: 122% !important;
+}
+
+.profile-detail{
+    margin-left: -80px;
+}
+
+.icon-size2{
+    margin-top: 7px !important;
+    margin-bottom: -7px !important;
+    font-size: 20px !important;
 }

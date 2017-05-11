@@ -59,7 +59,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
                 controller: 'ActivityCtrl'
             },
             'fabContent': {
-                template: '<button id="fab-activity" class="button button-fab button-fab-bottom-right expanded button-energized-900 flap"><i class="icon ion-paper-airplane"></i></button>',
+                template: '<button ui-sref="app.map" id="fab-activity" class="button button-fab button-fab-bottom-right expanded button-energized-900 spin"><i class="icon ion-map"></i></button>',
                 controller: function ($timeout) {
                     $timeout(function () {
                         document.getElementById('fab-activity').classList.toggle('on');
@@ -77,30 +77,28 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
                 controller: 'AddInfoCtrl'
             },
             'fabContent': {
-                /*
                 template: '<button ui-sref="app.map" id="fab-addInfo" class="button button-fab button-fab-bottom-right expanded button-energized-900 spin"><i class="icon ion-map"></i></button>',
                 controller: function ($timeout) {
                     $timeout(function () {
                         document.getElementById('fab-addInfo').classList.toggle('on');
                     }, 900);
                 }
-                */
             }
         }
     })
 
-    .state('app.gallery', {
-        url: '/gallery',
+    .state('app.favorites', {
+        url: '/favorites',
         views: {
             'menuContent': {
-                templateUrl: 'templates/gallery.html',
-                controller: 'GalleryCtrl'
+                templateUrl: 'templates/favorites.html',
+                controller: 'FavoritesCtrl'
             },
             'fabContent': {
-                template: '<button id="fab-gallery" class="button button-fab button-fab-bottom-right expanded button-energized-900 drop"><i class="icon ion-heart"></i></button>',
+                template: '<button  ui-sref="app.map"  id="fab-favorites" class="button button-fab button-fab-bottom-right expanded button-energized-900 spin"><i class="icon ion-map"></i></button>',
                 controller: function ($timeout) {
                     $timeout(function () {
-                        document.getElementById('fab-gallery').classList.toggle('on');
+                        document.getElementById('fab-favorites').classList.toggle('on');
                     }, 600);
                 }
             }
