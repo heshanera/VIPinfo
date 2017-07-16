@@ -1,6 +1,6 @@
 <ion-view view-title="Add Information">
     <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in bckgrnd">
-        <div class="content has-header container">
+        <div class="content has-header">
             <div class="list animate-fade-slide-in-right">
             
             <p class = "addInfoText">
@@ -8,26 +8,66 @@
                 <hr>
             </p>    
 
-            <label class="item item-input text-field3">
-              <i class="icon ico-size1 ion-ios-location"></i>
-              <input class="input-text-color" type="search" placeholder="Building/Street Name">
-            </label>
-                
-            <div id="map2" data-tap-disabled="true"></div>
+            <div class="item card-item">
+                <div class="card stable-bg ink ink-dark">
+                    <div class="item item-text-wrap">
+                      <i class="icon ico-size1 ion-ios-location"></i>    
+                      <span class = "textHeaderLabel"><strong>Building/Street Name</strong></span>
+                      <label class="item item-input text-field3">
+                        <input class="input-text-color" type="text">
+                      </label>
+                    </div>
+                </div>
+            </div>
 
-            <label class="item item-input text-field3">
-              <i class="icon ico-size1 ion-ios-person"></i>
-              <input class = "input-text-color" type="search" placeholder="VIP's Name">
-            </label>
-            <label class="item item-input text-field3">
-              <i class="icon ico-size1 ico-pos ion-ios-book"></i>
-              <textarea class = "input-text-color input-text-area" type="search" placeholder="VIP's information"></textarea>
-            </label>
-            <label class="item item-input text-field3">
-              <i class="icon ico-size1 ico-pos ion-ios-bookmarks"></i>
-              <textarea class = "input-text-color input-text-area" type="search" placeholder="Other References"></textarea>
-            </label>
+            <div class="item card-item">
+                <div class="card stable-bg ink ink-dark">
+                    <div class="item item-text-wrap">
+                      <i class="icon ico-size1 ion-ios-person"></i>    
+                      <span class = "textHeaderLabel"><strong>VIP's Name</strong></span>
+                      <label class="item item-input text-field3">
+                        <input class="input-text-color" type="text">
+                      </label>
+                    </div>
+                </div>
+            </div>
 
+            <div class="item card-item">
+                <div class="card stable-bg ink ink-dark">
+                    <div class="item item-text-wrap">
+                      <i class="icon ico-size1 ion-ios-book"></i>    
+                      <span class = "textHeaderLabel"><strong>VIP's information</strong></span>
+                      <label class="item item-input text-field3">
+                        <input class="input-text-color" type="text">
+                      </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item card-item">
+                <div class="card stable-bg ink ink-dark">
+                    <div class="item item-text-wrap">
+                      <i class="icon ico-size1 ion-ios-location"></i>    
+                      <span class = "textHeaderLabel"><strong>Location</strong></span>
+                        
+                        <div id="map2" data-tap-disabled="true"></div>
+
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="item card-item">
+                <div class="card stable-bg ink ink-dark">
+                    <div class="item item-text-wrap">
+                      <i class="icon ico-size1 ion-ios-bookmarks"></i>    
+                      <span class = "textHeaderLabel"><strong>Other References</strong></span>
+                      <label class="item item-input text-field3">
+                        <input class="input-text-color" type="text">
+                      </label>
+                    </div>
+                </div>
+            </div>
 
             <button class = "send-info-button button button-assertive ink"> Send </button>
             
