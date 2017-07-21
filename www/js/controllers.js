@@ -184,6 +184,9 @@ angular.module('starter.controllers', ['firebase'])
     ionicMaterialInk.displayEffect();
     var user = Profile.getUserInfo('heshan');
 
+    $scope.user = user;
+
+
 })
 
 .controller('ActivityCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
