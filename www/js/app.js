@@ -7,10 +7,10 @@
 
 var firebaseUrl = "https://vipinfo-76294.firebaseio.com";
 
-angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'ionMdInput', 'ngCordova', 'firebase'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'ionMdInput', 'ngCordova', 'firebase','starter.services'])
 
 
-.run(function($ionicPlatform, $rootScope, $location, Auth, $ionicLoading) {
+.run(function($ionicPlatform, $rootScope, $location, $firebaseAuth, $ionicLoading) {
     $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
@@ -22,11 +22,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
             StatusBar.styleDefault();
         }
 
+        username = 'heshan';
+
         /*
         $rootScope.firebaseUrl = firebaseUrl;
         $rootScope.displayName = null;
 
-        Auth.$onAuth(function (authData) {
+        $firebaseAuth.$onAuth(function (authData) {
             if (authData) {
                 console.log("Logged in as:", authData.uid);
             } else {
@@ -41,7 +43,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
             $ionicLoading.show({
                 template: 'Logging Out...'
             });
-            Auth.$unauth();
+            $firebaseAuth.$unauth();
         }
 
         $rootScope.$on("$stateChangeError", function (event, toState, toParams, fromState, fromParams, error) {

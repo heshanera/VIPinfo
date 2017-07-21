@@ -159,7 +159,7 @@ angular.module('starter.controllers', ['firebase'])
 
 })
 
-.controller('ProfileCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+.controller('ProfileCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk, Profile) {
     // Set Header
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
@@ -182,6 +182,8 @@ angular.module('starter.controllers', ['firebase'])
 
     // Set Ink
     ionicMaterialInk.displayEffect();
+
+    var user = Profile.getUserInfo('heshan');
 
 })
 
