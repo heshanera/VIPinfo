@@ -5,6 +5,9 @@ angular.module('starter.services', ['firebase'])
             return $firebaseAuth(ref);
 }])
 
+
+
+/*
 .factory('Chats', function ($firebase, Rooms) {
 
     var selectedRoomId;
@@ -17,7 +20,7 @@ angular.module('starter.services', ['firebase'])
             return chats;
         },
         remove: function (chat) {
-            chats.$remove(chat).then(function (ref) {
+            chats.$remove(chat).then(function (ref) { 
                 ref.key() === chat.$id; // true item has been removed
             });
         },
@@ -66,6 +69,7 @@ angular.module('starter.services', ['firebase'])
 /**
  * Simple Service which returns Rooms collection as Array from Salesforce & binds to the Scope in Controller
  */
+ /*
 .factory('Rooms', function ($firebase) {
     // Might use a resource here that returns a JSON array
     var ref = new Firebase(firebaseUrl);

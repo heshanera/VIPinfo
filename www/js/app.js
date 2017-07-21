@@ -7,7 +7,7 @@
 
 var firebaseUrl = "https://vipinfo-76294.firebaseio.com";
 
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ionic-material', 'ionMdInput', 'ngCordova', 'firebase'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'ionMdInput', 'ngCordova', 'firebase'])
 
 
 .run(function($ionicPlatform, $rootScope, $location, Auth, $ionicLoading) {
@@ -22,6 +22,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             StatusBar.styleDefault();
         }
 
+        /*
         $rootScope.firebaseUrl = firebaseUrl;
         $rootScope.displayName = null;
 
@@ -50,7 +51,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                 $location.path("/user");
             }
         });
-
+        */
 
     });
 })
