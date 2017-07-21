@@ -35,14 +35,15 @@ angular.module('starter.services', ['firebase'])
         },
         getUserInfo: function (username) {
             console.log("loading user info: " + username);
-            var dbUser = $firebaseArray(rootRef.child('user').child('heshan'));
-            //console.log( $firebase(rootRef.child('user').child('heshan') ).$asArray() );
-            /*
-            selectedRoomId = roomId;
-            if (!isNaN(roomId)) {
-                chats = $firebase(rootRef.child('heshan').child(selectedRoomId).child('chats')).$asArray();
-            }
-            */
+            var dbUser = $firebaseObject(rootRef.child('user').child(username));
+            dbUser.$loaded().then(function () {
+                user.username = dbUser.username;
+                user.name = dbUser.name;
+                user.hometown = dbUser.hometown;
+                user.email = dbUser.email;
+                user.password = dbUser.password;
+            });
+            return user;
         }
     }
 })

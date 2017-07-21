@@ -182,7 +182,6 @@ angular.module('starter.controllers', ['firebase'])
 
     // Set Ink
     ionicMaterialInk.displayEffect();
-
     var user = Profile.getUserInfo('heshan');
 
 })
