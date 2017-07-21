@@ -5,9 +5,12 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 
-angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'ionMdInput', 'ngCordova'])
+var firebaseUrl = "https://vipinfo-76294.firebaseio.com";
 
-.run(function($ionicPlatform) {
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ionic-material', 'ionMdInput', 'ngCordova', 'firebase'])
+
+
+.run(function($ionicPlatform, $rootScope, $location, Auth, $ionicLoading) {
     $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
@@ -18,6 +21,37 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
             // org.apache.cordova.statusbar required
             StatusBar.styleDefault();
         }
+
+        $rootScope.firebaseUrl = firebaseUrl;
+        $rootScope.displayName = null;
+
+        Auth.$onAuth(function (authData) {
+            if (authData) {
+                console.log("Logged in as:", authData.uid);
+            } else {
+                console.log("Logged out");
+                $ionicLoading.hide();
+                $location.path('/user');
+            }
+        });
+
+        $rootScope.logout = function () {
+            console.log("Logging out from the app");
+            $ionicLoading.show({
+                template: 'Logging Out...'
+            });
+            Auth.$unauth();
+        }
+
+        $rootScope.$on("$stateChangeError", function (event, toState, toParams, fromState, fromParams, error) {
+            // We can catch the error thrown when the $requireAuth promise is rejected
+            // and redirect the user back to the home page
+            if (error === "AUTH_REQUIRED") {
+                $location.path("/user");
+            }
+        });
+
+
     });
 })
 
