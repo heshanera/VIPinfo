@@ -182,8 +182,9 @@ angular.module('starter.controllers', ['firebase'])
 
     // Set Ink
     ionicMaterialInk.displayEffect();
-    var user = Profile.getUserInfo('heshan');
 
+    //getting user info
+    var user = Profile.getUserInfo(username);
     $scope.user = user;
 
 
@@ -205,7 +206,7 @@ angular.module('starter.controllers', ['firebase'])
     ionicMaterialInk.displayEffect();
 })
 
-.controller('FavoritesCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
+.controller('FavoritesCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion, Favorites) {
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.isExpanded = true;
@@ -220,6 +221,11 @@ angular.module('starter.controllers', ['firebase'])
     ionicMaterialMotion.fadeSlideInRight({
         selector: '.animate-fade-slide-in .item'
     });
+
+    //getting user favorites
+    var favoritesArray = Favorites.getUserFav(username);
+    $scope.favorites = favoritesArray;
+    
 
 })
 

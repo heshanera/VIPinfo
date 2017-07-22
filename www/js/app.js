@@ -5,7 +5,16 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 
-var firebaseUrl = "https://vipinfo-76294.firebaseio.com";
+var config = {
+
+    apiKey: "AIzaSyBRi8e_gUHCM7K5N3BinqBT4tQ49WGJVvU",
+    authDomain: "vipinfo-76294.firebaseapp.com",
+    databaseURL: "https://vipinfo-76294.firebaseio.com",
+    projectId: "vipinfo-76294",
+    storageBucket: "vipinfo-76294.appspot.com",
+    messagingSenderId: "814303788166"
+
+};
 
 angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'ionMdInput', 'ngCordova', 'firebase','starter.services'])
 
@@ -22,6 +31,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
             StatusBar.styleDefault();
         }
 
+        firebase.initializeApp(config);
         username = 'heshan';
 
         /*

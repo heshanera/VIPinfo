@@ -1,15 +1,3 @@
-var config = {
-
-    apiKey: "AIzaSyBRi8e_gUHCM7K5N3BinqBT4tQ49WGJVvU",
-    authDomain: "vipinfo-76294.firebaseapp.com",
-    databaseURL: "https://vipinfo-76294.firebaseio.com",
-    projectId: "vipinfo-76294",
-    storageBucket: "vipinfo-76294.appspot.com",
-    messagingSenderId: "814303788166"
-
-};
-
-
 angular.module('starter.services', ['firebase'])
     .factory("Auth", ["$firebaseAuth", "$rootScope",
     function ($firebaseAuth, $rootScope) {
@@ -19,7 +7,6 @@ angular.module('starter.services', ['firebase'])
 
 .factory('Profile', function ($firebase, $firebaseArray, $firebaseObject) {
 
-    firebase.initializeApp(config);
     var rootRef = firebase.database().ref();
     var user = {
         'username':'',
@@ -37,13 +24,52 @@ angular.module('starter.services', ['firebase'])
             console.log("loading user info: " + username);
             var dbUser = $firebaseObject(rootRef.child('user').child(username));
             dbUser.$loaded().then(function () {
-                user.username = dbUser.username;
+                user.username = username;
                 user.name = dbUser.name;
                 user.hometown = dbUser.hometown;
                 user.email = dbUser.email;
                 user.password = dbUser.password;
             });
             return user;
+        }
+    }
+})
+
+.factory('Favorites', function ($firebase, $firebaseArray, $firebaseObject) {
+
+    var rootRef = firebase.database().ref();
+    var placeArray = [];
+    var place = {
+        'comment':'',
+        'description':'',
+        'image':'',
+        "lat":'',
+        'lng':'',
+        'person':'',
+        'place':'',
+        'references':''
+    }
+
+    return {
+        all: function () {
+            return place;
+        },
+        getUserFav: function (username) {
+            console.log("loading favorite info: " + username);
+            var placeNameArray = $firebaseObject(rootRef.child('user').child(username).child('favorites'));
+
+            console.log(placeNameArray);
+            /*
+            dbUser.$loaded().then(function () {
+                user.username = username;
+                user.name = dbUser.name;
+                user.hometown = dbUser.hometown;
+                user.email = dbUser.email;
+                user.password = dbUser.password;
+            });
+            */
+            return placeArray;
+            
         }
     }
 })
