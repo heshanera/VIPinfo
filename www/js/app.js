@@ -32,7 +32,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
         }
 
         firebase.initializeApp(config);
-        username = 'heshan';
+        $rootScope.username = 'heshan';
+
 
         /*
         $rootScope.firebaseUrl = firebaseUrl;

@@ -159,7 +159,7 @@ angular.module('starter.controllers', ['firebase'])
 
 })
 
-.controller('ProfileCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk, Profile) {
+.controller('ProfileCtrl', function($rootScope, $scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk, Profile) {
     // Set Header
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
@@ -184,9 +184,33 @@ angular.module('starter.controllers', ['firebase'])
     ionicMaterialInk.displayEffect();
 
     //getting user info
+    var username = $rootScope.username;
     var user = Profile.getUserInfo(username);
     $scope.user = user;
 
+
+})
+
+.controller('FavoritesCtrl', function($scope ,$rootScope ,$stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion, Favorites) {
+    $scope.$parent.showHeader();
+    $scope.$parent.clearFabs();
+    $scope.isExpanded = true;
+    $scope.$parent.setHeaderFab(false);
+
+    // Activate ink for controller
+    ionicMaterialInk.displayEffect();
+
+    ionicMaterialMotion.pushDown({
+        selector: '.push-down'
+    });
+    ionicMaterialMotion.fadeSlideInRight({
+        selector: '.animate-fade-slide-in .item'
+    });
+
+    //getting user favorites
+    var username = $rootScope.username;
+    var favoritesArray = Favorites.getUserFav(username);
+    $scope.favorites = favoritesArray;
 
 })
 
@@ -204,29 +228,6 @@ angular.module('starter.controllers', ['firebase'])
 
     // Activate ink for controller
     ionicMaterialInk.displayEffect();
-})
-
-.controller('FavoritesCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion, Favorites) {
-    $scope.$parent.showHeader();
-    $scope.$parent.clearFabs();
-    $scope.isExpanded = true;
-    $scope.$parent.setHeaderFab(false);
-
-    // Activate ink for controller
-    ionicMaterialInk.displayEffect();
-
-    ionicMaterialMotion.pushDown({
-        selector: '.push-down'
-    });
-    ionicMaterialMotion.fadeSlideInRight({
-        selector: '.animate-fade-slide-in .item'
-    });
-
-    //getting user favorites
-    var favoritesArray = Favorites.getUserFav(username);
-    $scope.favorites = favoritesArray;
-    
-
 })
 
 .controller('MapCtrl', function($scope, $state, $cordovaGeolocation, $ionicPopup, $ionicLoading) {
