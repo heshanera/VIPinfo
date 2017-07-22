@@ -210,7 +210,7 @@ angular.module('starter.controllers', ['firebase'])
     //getting user favorites
     var username = $rootScope.username;
     var favoritesArray = Favorites.getUserFav(username);
-    $scope.favorites = favoritesArray;
+    $scope.favorite = favoritesArray;
 
 })
 

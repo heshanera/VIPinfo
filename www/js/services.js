@@ -40,17 +40,6 @@ angular.module('starter.services', ['firebase'])
     var rootRef = firebase.database().ref();
     var placeArray = [];
 
-    function createPlace(person, place, description, image, lat, lng, references, comment) {
-        this.person = person;
-        this.place = place;
-        this.description = description;
-        this.image = image;
-        this.lat = lat;
-        this.lng = lng;
-        this.references = references;
-        this.comment = comment;
-    }
-
     return {
         all: function () {
             return place;
@@ -61,43 +50,30 @@ angular.module('starter.services', ['firebase'])
 
             //console.log(placeNameArray);            
             placeNameArray.$loaded().then(function(){
-                var i = 0;
                 angular.forEach(placeNameArray, function(place) {
-                    console.log(place.$value);
-
+                    //console.log(place.$value);
                     var tmpPlace = $firebaseObject(rootRef.child('place').child(place.$value));
                     tmpPlace.$loaded().then(function () {
-                        console.log(tmpPlace.place);
-                    });
 
-                    /*
-                    tmpPlace.$loaded().then(function () {
-                        var placeObj = createPlace(
-                            tmpPlace.person, 
-                            tmpPlace.place, 
-                            tmpPlace.description, 
-                            tmpPlace.image, 
-                            tmpPlace.lat, 
-                            tmpPlace.lng, 
-                            tmpPlace.references, 
-                            tmpPlace.comment);
-                        placeArray[0] = placeObj;
-                        
+                        var placeObj = new Object();
+
+                        placeObj.person = tmpPlace.person; 
+                        placeObj.place = tmpPlace.place;
+                        placeObj.description = tmpPlace.description; 
+                        placeObj.image = tmpPlace.image;
+                        placeObj.lat = tmpPlace.lat;
+                        placeObj.lng = tmpPlace.lng; 
+                        placeObj.references = tmpPlace.references; 
+                        placeObj.comment = tmpPlace.comment;
+                        //console.log(placeObj.place);
+
+                        placeArray.push(placeObj);
+
+                        //console.log(placeArray[0].person);
                     });
-                    */
                 })
             });
 
-
-            /*
-            dbUser.$loaded().then(function () {
-                user.username = username;
-                user.name = dbUser.name;
-                user.hometown = dbUser.hometown;
-                user.email = dbUser.email;
-                user.password = dbUser.password;
-            });
-            */
             return placeArray;
             
         }
