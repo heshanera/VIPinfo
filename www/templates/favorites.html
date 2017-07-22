@@ -1,116 +1,24 @@
 <ion-view view-title="Favorites">
     <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
-       
-        <div ng-repeat="place in favorite" class = "card card-gallery">
-            <div class="ink dark-bg">
-                <h2>{{place.person}}</h2>
-                <img class="full-image" src="img/sansa-snowcastle3.jpg">
-            </div>
-             <div class="item tabs tabs-secondary tabs-icon-left">
-                <a class="tab-item stable-bg assertive">
-                    <i class="icon ion-heart"></i>
-                    4
-                </a>
-                <a class="tab-item stable-bg positive-900">
-                    <i class="icon ion-chatbubbles"></i>
-                    2
-                </a>
-            </div>
-        </div>
-
-        <div class="list">
-
-            <div ui-sref="app.activity" class="card card-gallery item item-text-wrap">
-                <div class="ink dark-bg">
-                    <h2>Where's Elsa?</h2>
+        <div ng-repeat="place in favorite|limitTo:favLength"  class="list full">
+            <div class = "card card-gallery">
+                <div class="ink dark-bg header">
+                    <h2 class = "placeHeader">{{place.person}}</h2>
                     <img class="full-image" src="img/sansa-snowcastle3.jpg">
                 </div>
-                <div class="item tabs tabs-secondary tabs-icon-left">
+                 <div class="tabs tabs-secondary tabs-icon-left">
                     <a class="tab-item stable-bg assertive">
                         <i class="icon ion-heart"></i>
                         4
                     </a>
                     <a class="tab-item stable-bg positive-900">
                         <i class="icon ion-chatbubbles"></i>
-                        2
                     </a>
                 </div>
             </div>
-
         </div>   
 
 
-
-        <!--
-        <div class="list half">
-            <div ui-sref="app.activity" class="card card-gallery item item-text-wrap">
-                <div class="ink dark-bg">
-                    <h2>Where's Elsa?</h2>
-                    <img class="full-image" src="img/sansa-snowcastle3.jpg">
-                </div>
-                <div class="item tabs tabs-secondary tabs-icon-left">
-                    <a class="tab-item stable-bg assertive">
-                        <i class="icon ion-heart"></i>
-                        4
-                    </a>
-                    <a class="tab-item stable-bg positive-900">
-                        <i class="icon ion-chatbubbles"></i>
-                        2
-                    </a>
-                </div>
-            </div>
-            <div ui-sref="app.activity" class="card card-gallery item item-text-wrap">
-                <div class="ink dark-bg">
-                    <h2>Hmm. Hope nobody destroys this!</h2>
-                    <img class="full-image" src="img/sansa-snowcastle.png">
-                </div>
-                <div class="item tabs tabs-secondary tabs-icon-left">
-                    <a class="tab-item stable-bg assertive">
-                        <i class="icon ion-heart"></i>
-                        6
-                    </a>
-                    <a class="tab-item stable-bg positive-900">
-                        <i class="icon ion-chatbubbles"></i>
-                        1
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="list half">
-            <div ui-sref="app.activity" class="card card-gallery item item-text-wrap">
-                <div class="ink dark-bg">
-                    <h2>Making Olaf a House</h2>
-                    <img class="full-image" src="img/sansa-snowcastle2.jpg">
-                </div>
-                <div class="item tabs tabs-secondary tabs-icon-left">
-                    <a class="tab-item stable-bg assertive">
-                        <i class="icon ion-heart"></i>
-                        22
-                    </a>
-                    <a class="tab-item stable-bg positive-900">
-                        <i class="icon ion-chatbubbles"></i>
-                        9
-                    </a>
-                </div>
-            </div>
-            <div ui-sref="app.activity" class="card card-gallery item item-text-wrap">
-                <div class="ink dark-bg">
-                    <h2>ohai!</h2>
-                    <img class="full-image" src="img/sansa-snowcastle4.jpg">
-                </div>
-                <div class="item tabs tabs-secondary tabs-icon-left">
-                    <a class="tab-item stable-bg assertive">
-                        <i class="icon ion-heart"></i>
-                        8
-                    </a>
-                    <a class="tab-item stable-bg positive-900">
-                        <i class="icon ion-chatbubbles"></i>
-                        0
-                    </a>
-                </div>
-            </div>
-        </div>
-        -->
 
     </ion-content>
 </ion-view>

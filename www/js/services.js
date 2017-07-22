@@ -26,7 +26,7 @@ angular.module('starter.services', ['firebase'])
             dbUser.$loaded().then(function () {
                 user.username = username;
                 user.name = dbUser.name;
-                user.hometown = dbUser.hometown;
+                user.hometown = dbUser.homeTown;
                 user.email = dbUser.email;
                 user.password = dbUser.password;
             });

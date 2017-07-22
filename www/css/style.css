@@ -107,6 +107,40 @@ p {
     display: none !important;
 }
 
+/* Places
+==================================*/
+
+.list.full {
+    display: inline-block;
+    left:0;
+    right:0;
+    margin: auto;
+    padding: 0;
+    width: 95%;
+    margin-bottom: 20px;
+}
+
+.placeHeader{
+    padding: 12px;
+    color: #fff;
+    margin: 0 0 2px 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.stable-bg{
+    background-color: #E0E0E0;
+    width: 100%;
+}
+
+.tab-item{
+    max-width: 100% !important;
+}
+
+.header{
+    margin-bottom: 40px !important;
+}
+
 /* Place
 ==================================*/
 

@@ -192,6 +192,14 @@ angular.module('starter.controllers', ['firebase'])
 })
 
 .controller('FavoritesCtrl', function($scope ,$rootScope ,$stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion, Favorites) {
+
+    //getting user favorites
+    var username = $rootScope.username;
+    var favoritesArray = Favorites.getUserFav(username);
+    $scope.favorite = favoritesArray;
+    $scope.favLength = 2;//favoritesArray.length;
+
+
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.isExpanded = true;
@@ -207,10 +215,6 @@ angular.module('starter.controllers', ['firebase'])
         selector: '.animate-fade-slide-in .item'
     });
 
-    //getting user favorites
-    var username = $rootScope.username;
-    var favoritesArray = Favorites.getUserFav(username);
-    $scope.favorite = favoritesArray;
 
 })
 
