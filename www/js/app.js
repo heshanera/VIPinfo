@@ -77,7 +77,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
     // Turn off back button text
     $ionicConfigProvider.backButton.previousTitleText(false);
     */
-    $ionicConfigProvider.tabs.position('bottom');
+    
 
     $stateProvider.state('app', {
         url: '/app',

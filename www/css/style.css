@@ -23,9 +23,8 @@ p {
     height: 100%;
 }
 
-.tab-pos{
-    position: fixed;
-    margin-bottom: 0px !important;
+.bottom-margin{
+    margin-bottom: 60px;
 }
 
 .tab-bg-color{
@@ -302,5 +301,5 @@ p {
 .icon-size2{
     margin-top: 7px !important;
     margin-bottom: -7px !important;
-    font-size: 20px !important;
+    font-size: 22px !important;
 }

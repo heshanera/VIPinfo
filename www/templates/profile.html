@@ -1,18 +1,5 @@
 <ion-view view-title="Profile">
     <ion-content ng-class="{expanded:$scope.isExpanded}">
-
-      <div class="tabs tabs-dark tabs-icon-bottom">
-        <a ui-sref="app.addInfo" class="tab-item">
-            <i class="icon icon-size2 ion-android-add-circle"></i> Add Info
-        </a>
-        <a ui-sref="app.activity" class="tab-item">
-            <i class="icon ion-android-navigate"></i> Activity
-        </a>
-        <a ui-sref="app.favorites" class="tab-item">
-            <i class="icon ion-images"></i> Favorites
-        </a>
-    </div>
-    <div>
         <div class="hero slide-up" style="background-image: url('img/login.jpg');">
             <div class="content">
                 <div class="avatar" style="background-image: url('img/daenerys.jpg');"></div>
@@ -20,7 +7,7 @@
                 <h4>{{user.username}}</h4>
             </div>
         </div>
-         <div class="">
+         <div class="bottom-margin">
             <div class="list animate-fade-slide-in-right">
 
             <h4 class="content padding double-padding-x">Profile Information<hr></h4>
@@ -57,7 +44,7 @@
                   <i class="icon ion-edit muted"></i>
               </a>
          </div>
-        
+        </div>
         <!--
          <div class="tabs tabs-dark tabs-icon-top tab-pos">
             <a ui-sref="app.addInfo" class="tab-item">
@@ -73,7 +60,7 @@
         -->
 
         <!--
-        <ion-tabs class="tabs-icon-top tabs-positive tab-bg-color">
+        <ion-tabs class="tabs-icon-top tabs-positive tab-bg-color tab-pos">
 
           <ion-tab title="Home" icon="ion-home" class = "tab-bg-color">
             <ion-nav-view name="home-tab"></ion-nav-view>
@@ -89,6 +76,7 @@
 
         </ion-tabs>
         -->
-    </div>    
-  </ion-content>
+
+    </ion-content>
+
 </ion-view>
