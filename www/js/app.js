@@ -77,7 +77,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
     // Turn off back button text
     $ionicConfigProvider.backButton.previousTitleText(false);
     */
-    
+
 
     $stateProvider.state('app', {
         url: '/app',
@@ -125,7 +125,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
                 controller: 'AddInfoCtrl'
             },
             'fabContent': {
-                template: '<button ui-sref="app.map" id="fab-addInfo" class="button button-fab button-fab-bottom-right expanded button-energized-900 spin"><i class="icon ion-map"></i></button>',
+                template: '<button ui-sref="app.map" id="fab-addInfo" class="button button-fab button-fab-top-right button-energized-900 spin"><i class="icon ion-map"></i></button>',
                 controller: function ($timeout) {
                     $timeout(function () {
                         document.getElementById('fab-addInfo').classList.toggle('on');
@@ -143,7 +143,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
                 controller: 'FavoritesCtrl'
             },
             'fabContent': {
-                template: '<button  ui-sref="app.map"  id="fab-favorites" class="button button-fab button-fab-bottom-right expanded button-energized-900 spin"><i class="icon ion-map"></i></button>',
+                template: '<button  ui-sref="app.map"  id="fab-favorites" class="button button-fab button-fab-top-right expanded button-energized-900 spin"><i class="icon ion-map"></i></button>',
                 controller: function ($timeout) {
                     $timeout(function () {
                         document.getElementById('fab-favorites').classList.toggle('on');
@@ -174,7 +174,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
                 controller: 'ProfileCtrl'
             },
             'fabContent': {
-                template: '<button ui-sref="app.map" id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-map"></i></button>',
+                template: '<button ui-sref="app.map" id="fab-profile" class="button button-fab button-fab-top-right button-energized-900"><i class="icon ion-map"></i></button>',
                 controller: function ($timeout) {
                     /*$timeout(function () {
                         document.getElementById('fab-profile').classList.toggle('on');
@@ -192,7 +192,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
                 controller: 'PlacesCtrl'
             },
             'fabContent': {
-                template: '<button ui-sref="app.map" id="fab-infos" class="button button-fab button-fab-bottom-right expanded button-energized-900 spin"><i class="icon ion-map"></i></button>',
+                template: '<button ui-sref="app.map" id="fab-infos" class="button button-fab button-fab-top-right button-energized-900 spin"><i class="icon ion-map"></i></button>',
                 controller: function ($timeout) {
                     $timeout(function () {
                         document.getElementById('fab-infos').classList.toggle('on');
