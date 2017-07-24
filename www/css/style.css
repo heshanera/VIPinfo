@@ -118,6 +118,10 @@ p {
 /* Places
 ==================================*/
 
+.favContent{
+    margin-bottom: 60px;
+}
+
 .list.full {
     display: inline-block;
     left:0;

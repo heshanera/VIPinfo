@@ -1,5 +1,7 @@
 <ion-view view-title="Favorites">
     <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
+
+    <div class = "favContent">    
         <div ng-repeat="place in favorite|limitTo:favLength"  class="list full">
             <div class = "card card-gallery">
                 <div class="ink dark-bg header">
@@ -17,7 +19,7 @@
                 </div>
             </div>
         </div>   
-
+    </div>    
 
 
     </ion-content>

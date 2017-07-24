@@ -107,7 +107,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
                 controller: 'ActivityCtrl'
             },
             'fabContent': {
-                template: '<button ui-sref="app.map" id="fab-activity" class="button button-fab button-fab-bottom-right expanded button-energized-900 spin"><i class="icon ion-map"></i></button>',
+                template: '<button ui-sref="app.map" id="fab-activity" class="button button-fab button-fab-top-right button-energized-900 spin"><i class="icon ion-map"></i></button>',
                 controller: function ($timeout) {
                     $timeout(function () {
                         document.getElementById('fab-activity').classList.toggle('on');
@@ -143,11 +143,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
                 controller: 'FavoritesCtrl'
             },
             'fabContent': {
-                template: '<button  ui-sref="app.map"  id="fab-favorites" class="button button-fab button-fab-top-right expanded button-energized-900 spin"><i class="icon ion-map"></i></button>',
+                template: '<button  ui-sref="app.map"  id="fab-favorites" class="button button-fab button-fab-top-right button-energized-900 spin"><i class="icon ion-map"></i></button>',
                 controller: function ($timeout) {
                     $timeout(function () {
                         document.getElementById('fab-favorites').classList.toggle('on');
-                    }, 600);
+                    }, 900);
                 }
             }
         }
