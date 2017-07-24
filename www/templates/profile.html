@@ -1,5 +1,18 @@
 <ion-view view-title="Profile">
     <ion-content ng-class="{expanded:$scope.isExpanded}">
+
+      <div class="tabs tabs-dark tabs-icon-bottom">
+        <a ui-sref="app.addInfo" class="tab-item">
+            <i class="icon icon-size2 ion-android-add-circle"></i> Add Info
+        </a>
+        <a ui-sref="app.activity" class="tab-item">
+            <i class="icon ion-android-navigate"></i> Activity
+        </a>
+        <a ui-sref="app.favorites" class="tab-item">
+            <i class="icon ion-images"></i> Favorites
+        </a>
+    </div>
+    <div>
         <div class="hero slide-up" style="background-image: url('img/login.jpg');">
             <div class="content">
                 <div class="avatar" style="background-image: url('img/daenerys.jpg');"></div>
@@ -7,18 +20,6 @@
                 <h4>{{user.username}}</h4>
             </div>
         </div>
-        <div class="tabs tabs-dark tabs-icon-top static">
-            <a ui-sref="app.addInfo" class="tab-item">
-                <i class="icon icon-size2 ion-android-add-circle"></i> Add Info
-            </a>
-            <a ui-sref="app.activity" class="tab-item">
-                <i class="icon ion-android-navigate"></i> Activity
-            </a>
-            <a ui-sref="app.favorites" class="tab-item">
-                <i class="icon ion-images"></i> Favorites
-            </a>
-        </div>
-
          <div class="">
             <div class="list animate-fade-slide-in-right">
 
@@ -56,6 +57,38 @@
                   <i class="icon ion-edit muted"></i>
               </a>
          </div>
+        
+        <!--
+         <div class="tabs tabs-dark tabs-icon-top tab-pos">
+            <a ui-sref="app.addInfo" class="tab-item">
+                <i class="icon icon-size2 ion-android-add-circle"></i> Add Info
+            </a>
+            <a ui-sref="app.activity" class="tab-item">
+                <i class="icon ion-android-navigate"></i> Activity
+            </a>
+            <a ui-sref="app.favorites" class="tab-item">
+                <i class="icon ion-images"></i> Favorites
+            </a>
+        </div>
+        -->
 
-    </ion-content>
+        <!--
+        <ion-tabs class="tabs-icon-top tabs-positive tab-bg-color">
+
+          <ion-tab title="Home" icon="ion-home" class = "tab-bg-color">
+            <ion-nav-view name="home-tab"></ion-nav-view>
+          </ion-tab>
+
+          <ion-tab title="About" icon="ion-ios-information" class = "tab-bg-color">
+            <ion-nav-view name="about-tab"></ion-nav-view>
+          </ion-tab>
+
+          <ion-tab title="Contact" icon="ion-ios-world" class = "tab-bg-color">
+            <ion-nav-view name="contact-tab"></ion-nav-view>
+          </ion-tab>
+
+        </ion-tabs>
+        -->
+    </div>    
+  </ion-content>
 </ion-view>

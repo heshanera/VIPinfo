@@ -23,6 +23,15 @@ p {
     height: 100%;
 }
 
+.tab-pos{
+    position: fixed;
+    margin-bottom: 0px !important;
+}
+
+.tab-bg-color{
+    background-color: #B71C1C !important;
+    color: #fff !important;
+}
 
 /* Menu
 ==================================*/

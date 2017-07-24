@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 
-var config = {
+var firebaseConfig = {
 
     apiKey: "AIzaSyBRi8e_gUHCM7K5N3BinqBT4tQ49WGJVvU",
     authDomain: "vipinfo-76294.firebaseapp.com",
@@ -31,7 +31,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
             StatusBar.styleDefault();
         }
 
-        firebase.initializeApp(config);
+        firebase.initializeApp(firebaseConfig);
         $rootScope.username = 'heshan';
 
 
@@ -73,11 +73,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
 
     // Turn off caching for demo simplicity's sake
     $ionicConfigProvider.views.maxCache(0);
-
     /*
     // Turn off back button text
     $ionicConfigProvider.backButton.previousTitleText(false);
     */
+    $ionicConfigProvider.tabs.position('bottom');
 
     $stateProvider.state('app', {
         url: '/app',
