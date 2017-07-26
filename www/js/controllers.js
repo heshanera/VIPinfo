@@ -117,7 +117,7 @@ angular.module('starter.controllers', ['firebase'])
  
     var mapOptions = {
       center: latLng,
-      zoom: 11,
+      zoom: 14,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
  

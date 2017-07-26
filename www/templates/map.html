@@ -1,35 +1,31 @@
 <ion-view  view-title="Local Map">
-    <ion-content>
-
-
-    <div class="tabs tabs-dark tabs-icon-bottom">
-        <a ui-sref="app.addInfo" class="tab-item">
-            <i class="icon icon-size2 ion-android-add-circle"></i> Add Info
-        </a>
-        <a ui-sref="app.activity" class="tab-item">
-            <i class="icon ion-android-navigate"></i> Activity
-        </a>
-        <a ui-sref="app.favorites" class="tab-item">
-            <i class="icon ion-images"></i> Favorites
-        </a>
-    </div>
-    
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+        <div class="tabs tabs-dark tabs-icon-top tab-pos">
+            <a ui-sref="app.profile" class="tab-item">
+                <i class="icon icon-size2 ion-person"></i> Profile
+            </a>
+            <a ui-sref="app.addInfo" class="tab-item">
+                <i class="icon icon-size2 ion-android-add-circle"></i> Add Info
+            </a>
+            <a ui-sref="app.activity" class="tab-item">
+                <i class="icon icon-size2 ion-android-navigate"></i> Activity
+            </a>
+            <a ui-sref="app.favorites" class="tab-item">
+                <i class="icon icon-size2 ion-images"></i> Favorites
+            </a>
+        </div>
     <ion-nav-view name="searchMap" class="view-container" nav-view-transition="ios" nav-view-direction="back" nav-swipe="">
         <!--
         <button id="" class="button button-fab button-fab-top-right button-energized-900 pane map-search-btn" ng-click="showSearch()">
             <i class="icon ion-search"></i>
         </button>
         -->
-
         <label class="item item-input searchBox">
           <i class="icon ion-search placeholder-icon"></i>
           <input type="search" id="searchTextField" placeholder="Search">
         </label>
-
     </ion-nav-view>
-
     
-
     <div id="map" data-tap-disabled="true"></div>
 
     </ion-content>

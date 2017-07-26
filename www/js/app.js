@@ -210,7 +210,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
                 controller: 'PlaceCtrl'
             },
             'fabContent': {
-                template: '<button ui-sref="app.map" id="fab-info" class="button button-fab button-fab-bottom-right expanded button-energized-900 spin"><i class="icon ion-map"></i></button>',
+                template: '<button ui-sref="app.map" id="fab-info" class="button button-fab button-fab-top-right     button-energized-900 spin"><i class="icon ion-map"></i></button>',
                 controller: function ($timeout) {
                     $timeout(function () {
                         document.getElementById('fab-info').classList.toggle('on');
