@@ -125,10 +125,11 @@ p {
 .list.full {
     display: inline-block;
     left:0;
-    right:0;
+    right:20px;
     margin: auto;
     padding: 0;
-    width: 95%;
+    padding-left: 25px;
+    width: 85%;
     margin-bottom: 20px;
 }
 

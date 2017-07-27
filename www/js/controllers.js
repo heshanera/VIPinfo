@@ -197,7 +197,7 @@ angular.module('starter.controllers', ['firebase'])
     var username = $rootScope.username;
     var favoritesArray = Favorites.getUserFav(username);
     $scope.favorite = favoritesArray;
-    $scope.favLength = 2;//favoritesArray.length;
+    $scope.favLength = 3;//favoritesArray.length;
 
 
     $scope.$parent.showHeader();
