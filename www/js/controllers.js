@@ -270,7 +270,7 @@ angular.module('starter.controllers', ['firebase'])
           });
           marker1.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png') 
           google.maps.event.addListener(marker1, 'click', function () {
-          $state.go("app.place");
+          $state.go("app.places");
 
       }); 
       }
@@ -350,7 +350,7 @@ angular.module('starter.controllers', ['firebase'])
       marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
        
       google.maps.event.addListener(marker, 'click', function () {
-          $state.go("app.places"); 
+          $state.go("app.place"); 
       }); 
 
       markerArray.push(marker);
