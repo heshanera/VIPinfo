@@ -13,7 +13,8 @@ angular.module('starter.services', ['firebase'])
         'name':'',
         'hometown':'',
         "email":'',
-        'password':''
+        'password':'',
+        'profilepic':''
     }
 
     return {
@@ -29,6 +30,7 @@ angular.module('starter.services', ['firebase'])
                 user.hometown = dbUser.homeTown;
                 user.email = dbUser.email;
                 user.password = dbUser.password;
+                user.profilepic = dbUser.profilePic;
             });
             return user;
         }
