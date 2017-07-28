@@ -38,7 +38,7 @@ angular.module('starter.services', ['firebase'])
 .factory('Favorites', function ($firebase, $firebaseArray, $firebaseObject) {
 
     var rootRef = firebase.database().ref();
-    var placeArray = [];
+    var placeArray = new Array();
 
     return {
         all: function () {
@@ -47,8 +47,7 @@ angular.module('starter.services', ['firebase'])
         getUserFav: function (username) {
             console.log("loading favorite info: " + username);
             var placeNameArray = $firebaseArray(rootRef.child('user').child(username).child('favorites'));
-
-            //console.log(placeNameArray);            
+            //console.log(placeNameArray);
             placeNameArray.$loaded().then(function(){
                 angular.forEach(placeNameArray, function(place) {
                     //console.log(place.$value);
@@ -68,12 +67,9 @@ angular.module('starter.services', ['firebase'])
                         //console.log(placeObj.place);
 
                         placeArray.push(placeObj);
-
-                        //console.log(placeArray[0].person);
                     });
                 })
             });
-
             return placeArray;
             
         }

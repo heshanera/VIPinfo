@@ -119,18 +119,19 @@ p {
 ==================================*/
 
 .favContent{
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
-.list.full {
+.fav-image {
     display: inline-block;
     left:0;
-    right:20px;
+    right:10px;
     margin: auto;
     padding: 0;
-    padding-left: 25px;
-    width: 85%;
+    padding-left: 0px;
+    width: 87%;
     margin-bottom: 20px;
+    /*background-color: #B71C1C;*/
 }
 
 .placeHeader{
@@ -152,6 +153,17 @@ p {
 
 .header{
     margin-bottom: 40px !important;
+}
+
+.favorite-content{
+    margin-top:-50px;
+    padding-top: 45px;
+    margin-bottom: 50px;
+}
+
+.favorite-container{
+    margin-bottom: 40px;
+    padding-bottom: 40px;
 }
 
 /* Place
@@ -365,6 +377,21 @@ p {
     margin-top: 7px !important;
     margin-bottom: -11px !important;
     font-size: 22px !important;
+}
+
+.profile-content{
+    margin-top:-50px;
+    padding-top: 25px;
+    margin-bottom: 50px;
+}
+
+.profile-container{
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+}
+
+.bottom-margin{
+    padding-bottom: 50px;
 }
 
 /** Activity

@@ -1,6 +1,26 @@
 <ion-view view-title="Favorites">
-    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
+    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in favorite-content">
 
+    <div class = "favorite-container">   
+        <div ng-repeat="place in favorite|limitTo:favLength" class = "place-image card card-gallery fav-image">
+            <div class="ink dark-bg header">
+                <h2 class = "placeHeader">{{place.person}}</h2>
+                <img class="full-image" src={{place.image}}>
+            </div>
+             <div class="tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item stable-bg assertive">
+                    <i class="icon ion-heart"></i>
+                    <span class = "place-font1" >4</span>
+                </a>
+                <a class="tab-item stable-bg positive-900">
+                    <i class="icon ion-chatbubbles"></i>
+                    <span class = "place-font1" >3</span>
+                </a>
+            </div>
+        </div>
+    </div>    
+
+    <!--
     <div class = "favContent">    
         <div ng-repeat="place in favorite|limitTo:favLength"  class="list full">
             <div class = "card card-gallery">
@@ -20,61 +40,9 @@
             </div>
         </div>   
     </div>    
+    -->
 
-    <div class = "places-container">
-            <div class="list half">
-                <div ui-sref="app.place" class="card card-gallery item item-text-wrap">
-                    <div class="ink dark-bg">
-                        <h2>Kumaratunga Munidasa mawatha</h2>
-                        <img class="full-image" src="img/kumaratunga-munidasa.jpg">
-                    </div>
-                    <div class="item tabs tabs-secondary tabs-icon-left">
-                        <a class="tab-item stable-bg assertive">
-                            <i class="icon ion-heart"></i>
-                            4
-                        </a>
-                        <a class="tab-item stable-bg positive-900">
-                            <i class="icon ion-chatbubbles"></i>
-                            2
-                        </a>
-                    </div>
-                </div>
-                <div ui-sref="app.place" class="card card-gallery item item-text-wrap">
-                    <div class="ink dark-bg">
-                        <h2>John De Silva memorial theatre</h2>
-                        <img class="full-image" src="img/john-de-silva.jpg">
-                    </div>
-                    <div class="item tabs tabs-secondary tabs-icon-left">
-                        <a class="tab-item stable-bg assertive">
-                            <i class="icon ion-heart"></i>
-                            6
-                        </a>
-                        <a class="tab-item stable-bg positive-900">
-                            <i class="icon ion-chatbubbles"></i>
-                            1
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="list half">
-                <div ui-sref="app.place" class="card card-gallery item item-text-wrap">
-                    <div class="ink dark-bg">
-                        <h2>Arthur V. Dias mawatha</h2>
-                        <img class="full-image" src="img/arthur-v-dias.jpg">
-                    </div>
-                    <div class="item tabs tabs-secondary tabs-icon-left">
-                        <a class="tab-item stable-bg assertive">
-                            <i class="icon ion-heart"></i>
-                            22
-                        </a>
-                        <a class="tab-item stable-bg positive-900">
-                            <i class="icon ion-chatbubbles"></i>
-                            9
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+   
 
 
     </ion-content>
