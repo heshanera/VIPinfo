@@ -297,6 +297,7 @@ angular.module('starter.controllers', ['firebase'])
     });
  
   }, function(error){
+    console.log(error);
     console.log("Could not get location");
   });
 

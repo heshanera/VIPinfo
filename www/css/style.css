@@ -185,7 +185,29 @@ p {
 
 .place-description{
     margin-right: 15px !important;
-    margin-bottom: 40px !important;
+    margin-top:20px;
+}
+
+.place-container{
+    padding-bottom: 80px !important;
+}
+
+.place-image{
+    margin-left: 20px;
+}
+
+.place-comment-header{
+    margin-top: 25px;
+    margin-bottom: 5px; 
+    background-color: #B71C1C;
+    margin-left: 20px;
+    margin-right: 10px;
+    border-radius: 3px;
+    padding:6px;
+    font-size:16px;
+    color: #fff;
+    font-weight: bold; 
+    padding-left: 15px;
 }
 
 /* AddInfo
