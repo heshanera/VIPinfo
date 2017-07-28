@@ -210,6 +210,17 @@ p {
     padding-left: 15px;
 }
 
+.place-font1{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.comment-icon{
+    float: right;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
 /* AddInfo
 ==================================*/
 
