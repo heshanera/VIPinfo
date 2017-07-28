@@ -366,3 +366,18 @@ p {
     margin-bottom: -11px !important;
     font-size: 22px !important;
 }
+
+/** Activity
+================================*/
+
+.activity-content{
+    margin-top:-50px;
+    padding-top: 25px;
+    margin-bottom: 50px;
+    padding-right:15px; 
+}
+
+.activity-container{
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+}
