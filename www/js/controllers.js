@@ -159,7 +159,7 @@ angular.module('starter.controllers', ['firebase'])
 
 })
 
-.controller('ProfileCtrl', function($rootScope, $scope, $stateParams, $timeout, $cordovaGeolocation, ionicMaterialMotion, ionicMaterialInk, Profile) {
+.controller('ProfileCtrl', function($rootScope, $scope, $stateParams, $timeout, $cordovaGeolocation, $ionicPopup, ionicMaterialMotion, ionicMaterialInk, Profile) {
     // Set Header
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
@@ -183,12 +183,13 @@ angular.module('starter.controllers', ['firebase'])
     // Set Ink
     ionicMaterialInk.displayEffect();
 
-    // getting user info
+    /*===================== getting user info ===============================*/
+
     var username = $rootScope.username;
     var user = Profile.getUserInfo(username);
     $scope.user = user;
     
-    // getting user position
+    /*===================== getting user position ============================*/
     
     var options = {timeout: 10000, enableHighAccuracy: true};
     $cordovaGeolocation.getCurrentPosition(options).then(function(position){
@@ -247,6 +248,42 @@ angular.module('starter.controllers', ['firebase'])
         console.log("Could not get location");
     });
 
+    /*===================== editing user info ========================================*/
+
+    $scope.showPopup = function(title,value) {
+
+      $scope.data = {"value": value}
+      // An elaborate, custom popup
+      var editUserInfoPopup = $ionicPopup.show({
+         template: '<input type="text" ng-model="data.value" class = "text-box-style">',
+         title: 'Change '+title,
+         //subTitle: 'Please use normal things',
+         scope: $scope,
+         buttons: [
+            { 
+              text: '<i class="icon ion-close-circled dark"></i>' 
+            }, {
+              text: '<i class="icon ion-archive assertive" ></i> ',
+              onTap: function(e) {
+                if (!$scope.data.value) {
+                 //don't allow the user to close unless he enters info password
+                 e.preventDefault();
+                } else {
+                 return $scope.data.value;
+                }
+              } 
+            },
+          ]
+        });
+        editUserInfoPopup.then(function(res) {
+            console.log('Tapped!', res);
+        });
+        /*
+        $timeout(function() {
+            editUserInfoPopup.close(); //close the popup after 3 seconds for some reason
+        }, 3000);
+        */
+    };
 
 
 
