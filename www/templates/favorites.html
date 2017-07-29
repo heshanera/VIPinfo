@@ -2,7 +2,7 @@
     <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in favorite-content">
 
     <div class = "favorite-container">   
-        <div ng-repeat="place in favorite|limitTo:favLength" class = "place-image card card-gallery fav-image">
+        <div ng-repeat="place in favorite|limitTo:favLength" class = "place-image item card card-gallery fav-image">
             <div class="ink dark-bg header">
                 <h2 class = "placeHeader">{{place.person}}</h2>
                 <img class="full-image" src={{place.image}}>

@@ -40,14 +40,14 @@ angular.module('starter.services', ['firebase'])
 .factory('Favorites', function ($firebase, $firebaseArray, $firebaseObject) {
 
     var rootRef = firebase.database().ref();
-    var placeArray = new Array();
-
+    
     return {
         all: function () {
             return place;
         },
         getUserFav: function (username) {
             console.log("loading favorite info: " + username);
+            var placeArray = new Array();
             var placeNameArray = $firebaseArray(rootRef.child('user').child(username).child('favorites'));
             //console.log(placeNameArray);
             placeNameArray.$loaded().then(function(){
@@ -73,6 +73,47 @@ angular.module('starter.services', ['firebase'])
                 })
             });
             return placeArray;
+            
+        }
+    }
+})
+
+.factory('Activities', function ($firebase, $firebaseArray, $firebaseObject) {
+
+    var rootRef = firebase.database().ref();
+
+    return {
+        all: function () {
+            return commentArray;
+        },
+        getUserComments: function (username) {
+            console.log("loading comments: " + username);
+            var finalCommentArray = new Array();
+            var commentArray = $firebaseArray(rootRef.child('user').child(username).child('comment'));
+            //console.log(commentArray);
+            commentArray.$loaded().then(function(){
+                angular.forEach(commentArray, function(comment) {
+                    //console.log(comnent.$value);
+                    var imgPath = $firebaseObject(rootRef.child('place').child(comment.place).child('image'));
+                    var vipName = $firebaseObject(rootRef.child('place').child(comment.place).child('person'));
+
+                    imgPath.$loaded().then(function () {
+                        vipName.$loaded().then(function () {
+
+                            var commentObj = new Object();
+
+                            commentObj.topic = vipName.$value;
+                            commentObj.comment = comment.comment;
+                            commentObj.image = imgPath.$value;
+                            commentObj.time =  comment.time;
+                            finalCommentArray.push(commentObj);
+
+                            //console.log(commentObj.image);
+                        });    
+                    });
+                })
+            });
+            return finalCommentArray;
             
         }
     }

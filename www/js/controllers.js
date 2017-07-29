@@ -198,17 +198,15 @@ angular.module('starter.controllers', ['firebase'])
     $scope.isExpanded = true;
     $scope.$parent.setHeaderFab(false);
 
-    // Activate ink for controller
+    $timeout(function() {
+        ionicMaterialMotion.fadeSlideIn({
+            selector: '.animate-fade-slide-in .item'
+        });
+    }, 600);
+
     ionicMaterialInk.displayEffect();
 
-    ionicMaterialMotion.pushDown({
-        selector: '.push-down'
-    });
-    ionicMaterialMotion.fadeSlideInRight({
-        selector: '.animate-fade-slide-in .item'
-    });
-
-    //getting user favorites
+    // getting user favorites
     var username = $rootScope.username;
     var favoritesArray = Favorites.getUserFav(username);
     $scope.favorite = favoritesArray;
@@ -219,7 +217,7 @@ angular.module('starter.controllers', ['firebase'])
 
 })
 
-.controller('ActivityCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+.controller('ActivityCtrl', function($scope, $rootScope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk, Activities) {
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.isExpanded = true;
@@ -229,10 +227,20 @@ angular.module('starter.controllers', ['firebase'])
         ionicMaterialMotion.fadeSlideIn({
             selector: '.animate-fade-slide-in .item'
         });
-    }, 200);
+    }, 600);
+
 
     // Activate ink for controller
     ionicMaterialInk.displayEffect();
+
+    // getting user comments
+    var username = $rootScope.username;
+    var commentsArray = Activities.getUserComments(username);
+    $scope.comments = commentsArray;
+
+    if ( $scope.comments.length == 0 ) { $scope.commentSize = 10; }
+    else { $scope.commentSize = $scope.comments.length; }
+
 })
 
 .controller('MapCtrl', function($scope, $state, $cordovaGeolocation, $ionicPopup, $ionicLoading) {

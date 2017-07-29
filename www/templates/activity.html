@@ -1,6 +1,25 @@
 <ion-view view-title="My Comments">
     <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in activity-content">
     <div class = "activity-container">    
+
+
+        <div ng-repeat="comment in comments|limitTo:commentSize"  class="item card-item">
+            <div ui-sref="app.place" class="card stable-bg ink ink-dark">
+                <div class="item item-avatar item-text-wrap">
+                    <span class="avatar" style="background-image: url({{comment.image}});"></span>
+                    <strong>Topic: </strong> <strong  class = "positive-900"> {{comment.topic}} </strong>
+                    <br><br>
+                    <span>  {{comment.comment}} </span>
+                    <div class="card-footer text-right">
+                        <div class="pull-right">
+                            <i class="icon ion-clock"></i> {{comment.time}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--
         <div class="item card-item">
             <div ui-sref="app.gallery" class="card stable-bg ink ink-dark">
                 <div class="item item-avatar item-text-wrap">
@@ -52,6 +71,7 @@
                 </div>
             </div>
         </div>
+        -->
     </div>    
     </ion-content>
 </ion-view>
