@@ -33,6 +33,11 @@ angular.module('starter.services', ['firebase'])
                 user.profilepic = dbUser.profilePic;
             });
             return user;
+        },
+        getUserLocation: function(callback) {
+
+            
+            
         }
     }
 })

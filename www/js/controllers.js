@@ -159,7 +159,7 @@ angular.module('starter.controllers', ['firebase'])
 
 })
 
-.controller('ProfileCtrl', function($rootScope, $scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk, Profile) {
+.controller('ProfileCtrl', function($rootScope, $scope, $stateParams, $timeout, $cordovaGeolocation, ionicMaterialMotion, ionicMaterialInk, Profile) {
     // Set Header
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
@@ -183,10 +183,71 @@ angular.module('starter.controllers', ['firebase'])
     // Set Ink
     ionicMaterialInk.displayEffect();
 
-    //getting user info
+    // getting user info
     var username = $rootScope.username;
     var user = Profile.getUserInfo(username);
     $scope.user = user;
+    
+    // getting user position
+    
+    var options = {timeout: 10000, enableHighAccuracy: true};
+    $cordovaGeolocation.getCurrentPosition(options).then(function(position){
+
+      var lat  = position.coords.latitude;
+      var lng = position.coords.longitude;
+
+      var geocoder = new google.maps.Geocoder();
+      var latlng = new google.maps.LatLng(lat, lng);
+      geocoder.geocode({'latLng': latlng}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          //console.log(results);
+          if (results[1]) {
+              var indice=0;
+              for (var j=0; j<results.length; j++)
+              {
+                if (results[j].types[0]=='locality')
+                {
+                    indice=j;
+                    break;
+                }
+              }
+              //alert('The good number is: '+j);
+              //console.log(results[j]);
+              for (var i=0; i<results[j].address_components.length; i++)
+              {
+                if (results[j].address_components[i].types[0] == "locality") {
+                    //this is the object you are looking for
+                    var city = results[j].address_components[i];
+                }
+                if (results[j].address_components[i].types[0] == "administrative_area_level_1") {
+                    //this is the object you are looking for
+                    var region = results[j].address_components[i];
+                }
+                if (results[j].address_components[i].types[0] == "country") {
+                    //this is the object you are looking for
+                    var country = results[j].address_components[i];
+                }
+              }
+
+              //city data
+              //alert(city.long_name + " || " + region.long_name + " || " + country.short_name);
+              $scope.userPosition = city.long_name + " " + region.long_name + " " + country.short_name;
+              //alert(userPosition);
+
+          } else {
+              //alert("No results found");
+              $scope.userPosition = "Could not get location";
+          }
+        } else {
+            //alert("Geocoder failed due to: " + status);
+            $scope.userPosition = "Could not get location";
+        }
+      });
+    }, function(error){
+        console.log("Could not get location");
+    });
+
+
 
 
 })
