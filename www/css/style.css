@@ -205,7 +205,9 @@ p {
 }
 
 .place-image{
-    margin-left: 20px;
+    margin-left: 22px;
+    margin-right: 10px !important; 
+    width: auto !important;
 }
 
 .place-comment-header{

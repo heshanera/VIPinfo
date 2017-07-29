@@ -157,6 +157,109 @@ angular.module('starter.controllers', ['firebase'])
     console.log("Could not get location");
   });
 
+    /*===================== adding new info ========================================*/
+
+    $scope.newPlacelat = '';
+    $scope.newPlacelng = '';
+    $scope.buildingStreetName = '';
+    $scope.vipName = '';
+    $scope.vipInfo = '';
+    $scope.references = '';
+
+    $scope.showInputPopup = function(title,value) {
+
+      $scope.data = {"value": value}
+      // An elaborate, custom popup
+      var editUserInfoPopup = $ionicPopup.show({
+         template: '<input type="text" ng-model="data.value" class = "text-box-style">',
+         title: 'Input '+title,
+         //subTitle: 'Please use normal things',
+         scope: $scope,
+         buttons: [
+            { 
+              text: '<i class="icon ion-close-circled dark"></i>' 
+            }, {
+              text: '<i class="icon ion-checkmark-circled" ></i> ',
+              onTap: function(e) {
+                if (!$scope.data.value) {
+                 //don't allow the user to close unless he enters info password
+                 e.preventDefault();
+                } else {
+
+
+                  switch(title){
+                    case 'Building/Street Name':
+                      $scope.buildingStreetName = $scope.data.value;  
+                      break;
+                    case 'VIP\'s Name':
+                      $scope.vipName = $scope.data.value;  
+                      break;  
+                  }
+
+                  return $scope.data.value;
+                }
+              } 
+            },
+          ]
+        });
+        editUserInfoPopup.then(function(res) {
+            console.log('Tapped!', res);
+        });
+        /*
+        $timeout(function() {
+            editUserInfoPopup.close(); //close the popup after 3 seconds for some reason
+        }, 3000);
+        */
+    };
+
+    $scope.showInputTextAreaPopup = function(title,value) {
+
+      $scope.data = {"value": value}
+      // An elaborate, custom popup
+      var editUserInfoPopup = $ionicPopup.show({
+         template: '<textarea rows="10" ng-model="data.value" class = "text-box-style">',
+         title: 'Input '+title,
+         //subTitle: 'Please use normal things',
+         scope: $scope,
+         buttons: [
+            { 
+              text: '<i class="icon ion-close-circled dark"></i>' 
+            }, {
+              text: '<i class="icon ion-checkmark-circled" ></i> ',
+              onTap: function(e) {
+                if (!$scope.data.value) {
+                 //don't allow the user to close unless he enters info password
+                 e.preventDefault();
+                } else {
+
+
+                  switch(title){
+                    case 'VIP\'s information':
+                      $scope.vipInfo = $scope.data.value;  
+                      break;
+                    case 'Other References':
+                      $scope.references = $scope.data.value;  
+                      break;  
+                  }
+
+                  return $scope.data.value;
+                }
+              } 
+            },
+          ]
+        });
+        editUserInfoPopup.then(function(res) {
+            console.log('Tapped!', res);
+        });
+        /*
+        $timeout(function() {
+            editUserInfoPopup.close(); //close the popup after 3 seconds for some reason
+        }, 3000);
+        */
+    };
+
+
+
 })
 
 .controller('ProfileCtrl', function($rootScope, $scope, $stateParams, $timeout, $cordovaGeolocation, $ionicPopup, ionicMaterialMotion, ionicMaterialInk, Profile) {
@@ -285,6 +388,85 @@ angular.module('starter.controllers', ['firebase'])
         */
     };
 
+    /*===================== editing user password ========================================*/
+
+    $scope.showPasswordPopup = function(title,value) {
+
+      $scope.data = {"value": value}
+      // An elaborate, custom popup
+      var editUserInfoPopup = $ionicPopup.show({
+         template:  'Current Password'+
+                    '<input type="text" ng-model="data.value" class = "text-box-style"><br>'+
+                    'New Password'+
+                    '<input type="text" ng-model="data.new" class = "text-box-style"><br>'+
+                    'Confirm Password'+
+                    '<input type="text" ng-model="data.confirm" class = "text-box-style">',
+         title: 'Change '+title,
+         //subTitle: 'Please use normal things',
+         scope: $scope,
+         buttons: [
+            { 
+              text: '<i class="icon ion-close-circled dark"></i>' 
+            }, {
+              text: '<i class="icon ion-archive assertive" ></i> ',
+              onTap: function(e) {
+                if (!$scope.data.value) {
+                 //don't allow the user to close unless he enters info password
+                 e.preventDefault();
+                } else {
+                 return $scope.data.value;
+                }
+              } 
+            },
+          ]
+        });
+        editUserInfoPopup.then(function(res) {
+            console.log('Tapped!', res);
+        });
+        /*
+        $timeout(function() {
+            editUserInfoPopup.close(); //close the popup after 3 seconds for some reason
+        }, 3000);
+        */
+    };
+
+    /*===================== editing user current location ========================================*/
+
+    $scope.showLocationPopup = function(title,value) {
+
+      $scope.data = {"value": value}
+      // An elaborate, custom popup
+      var editUserInfoPopup = $ionicPopup.show({
+         template: value,
+         title: 'Update Location',
+         //subTitle: 'Please use normal things',
+         scope: $scope,
+         buttons: [
+            { 
+              text: '<i class="icon ion-close-circled dark"></i>' 
+            }, {
+              text: '<i class="icon ion-loop assertive" ></i> ',
+              onTap: function(e) {
+                if (!$scope.data.value) {
+                 //don't allow the user to close unless he enters info password
+                 e.preventDefault();
+                } else {
+                 return $scope.data.value;
+                }
+              } 
+            },
+          ]
+        });
+        editUserInfoPopup.then(function(res) {
+            console.log('Tapped!', res);
+        });
+        /*
+        $timeout(function() {
+            editUserInfoPopup.close(); //close the popup after 3 seconds for some reason
+        }, 3000);
+        */
+    };
+
 
 
 })
@@ -366,20 +548,31 @@ angular.module('starter.controllers', ['firebase'])
       });
 
 
+      var mySurrounding = new google.maps.Circle({
+        center: latLng,
+        radius: 750, // 750m radius
+        strokeColor: "#c4c4c4",
+        strokeOpacity: 0.35,
+        strokeWeight: 0,
+        fillColor: '#7FFF00',
+        fillOpacity: 0.2
+      });
+      mySurrounding.setMap($scope.map);
+
         google.maps.event.addListener($scope.map, 'click', function(event) {
          placeMarker(event.latLng);
       });
 
       function placeMarker(location) {
-          var marker1 = new google.maps.Marker({
-              position: location, 
-              map:$scope.map
-          });
-          marker1.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png') 
-          google.maps.event.addListener(marker1, 'click', function () {
-          $state.go("app.places");
+            var marker1 = new google.maps.Marker({
+                position: location, 
+                map:$scope.map
+            });
+            marker1.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png') 
+            google.maps.event.addListener(marker1, 'click', function () {
+            $state.go("app.places");
 
-      }); 
+        }); 
       }
 
       var markerArray = new Array(); 
@@ -394,11 +587,9 @@ angular.module('starter.controllers', ['firebase'])
 
           var lat = position.coords.latitude;
           var lng = position.coords.longitude;
-          $scope.setMarker(lat+0.0050,lng+0.0050,markerArray);
-          $scope.setMarker(lat+0.0010,lng+0.0010,markerArray);
+          $scope.setMarker(lat+0.0010,lng+0.0030,markerArray);
           $scope.setMarker(lat+0.0030,lng-0.0025,markerArray);
           $scope.setMarker(lat-0.0050,lng+0.0026,markerArray);
-          $scope.setMarker(lat-0.0025,lng-0.0056,markerArray);
       });      
      
     });
