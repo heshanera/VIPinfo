@@ -364,9 +364,9 @@ angular.module('starter.controllers', ['firebase'])
          scope: $scope,
          buttons: [
             { 
-              text: '<i class="icon ion-close-circled dark"></i>' 
+              text: '<i class="icon ion-close-circled"></i>' 
             }, {
-              text: '<i class="icon ion-archive assertive" ></i> ',
+              text: '<i class="icon ion-archive" ></i> ',
               onTap: function(e) {
                 if (!$scope.data.value) {
                  //don't allow the user to close unless he enters info password
@@ -406,9 +406,9 @@ angular.module('starter.controllers', ['firebase'])
          scope: $scope,
          buttons: [
             { 
-              text: '<i class="icon ion-close-circled dark"></i>' 
+              text: '<i class="icon ion-close-circled"></i>' 
             }, {
-              text: '<i class="icon ion-archive assertive" ></i> ',
+              text: '<i class="icon ion-archive" ></i> ',
               onTap: function(e) {
                 if (!$scope.data.value) {
                  //don't allow the user to close unless he enters info password
@@ -443,9 +443,9 @@ angular.module('starter.controllers', ['firebase'])
          scope: $scope,
          buttons: [
             { 
-              text: '<i class="icon ion-close-circled dark"></i>' 
+              text: '<i class="icon ion-close-circled"></i>' 
             }, {
-              text: '<i class="icon ion-loop assertive" ></i> ',
+              text: '<i class="icon ion-loop" ></i> ',
               onTap: function(e) {
                 if (!$scope.data.value) {
                  //don't allow the user to close unless he enters info password

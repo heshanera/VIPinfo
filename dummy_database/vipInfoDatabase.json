@@ -1,0 +1,115 @@
+{
+  	"user": {
+    	"heshan": {
+	    	"userId":"001", 
+	    	"name":"Heshan Eranga", 
+	    	"email":"erangamx@gmail.com", 
+	    	"homeTown":"Horana", 
+	    	"password":"1234",
+        "profilePic":"https://firebasestorage.googleapis.com/v0/b/vipinfo-76294.appspot.com/o/userProfile%2Fheshan.png?alt=media&token=c7f1b45c-4491-49a5-943d-971e545075d6",
+	      "favorites": { "f1":"Kumaratunga Munidasa mawatha", "f2":"John De Silva memorial theatre", "f3":"Arthur V Dias mawatha" },  
+        "comment": {
+          "c1": {  
+            "place":"Kumaratunga Munidasa mawatha", 
+            "time":"May 4 at 2:50pm",
+            "comment": "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
+          }, "c2": {  
+            "place":"John De Silva memorial theatre", 
+            "time":"June 5 at 12:54pm",
+            "comment": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia"
+          }, "c3": {  
+            "place":"Arthur V Dias mawatha", 
+            "time":"June 5 at 9:51am",
+            "comment": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip."
+          }
+        } 
+      },
+
+      "john": {  
+        "userId":"002", 
+        "name":"John Doe", 
+        "email":"Doe@gmail.com", 
+        "homeTown":"Lorem", 
+        "password":"1234",
+        "profilePic":"https://firebasestorage.googleapis.com/v0/b/vipinfo-76294.appspot.com/o/userProfile%2Fjohn.png?alt=media&token=7fddba12-3f4d-4037-9a73-c908eaf98361",
+        "favorites": { "f1":"Kumaratunga Munidasa mawatha"},  
+        "comment": {
+          "c1": {  
+            "place":"Kumaratunga Munidasa mawatha", 
+            "time":"July 10 at 9:41pm",
+            "comment": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia"
+          }, "c2": {  
+            "place":"John De Silva memorial theatre", 
+            "time":"June 10 at 11:41am",
+            "comment": "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
+          }
+        } 
+    	}
+  	},
+
+  	"place": {
+  		"Kumaratunga Munidasa mawatha":{
+  			"placeId":"001", 
+  			"latitude":"6.91057858", 
+  			"longitude":"79.86227989", 
+  			"place":"Lorem ipsum dolor", 
+  			"person": "Kumaratunga Munidasa", 
+  			"description":"Kumaratunga Munidasa (කුමාරතුංග මුනිදාස) was a pioneer Sri Lankan (Sinhala) linguist, grammarian, commentator, writer, poet, and journalist. He founded the Hela Havula movement which sought to remove Sanskrit influences in the Sinhala language promote its correct usage. He is believed to be one of the most eminent scholars Sri Lanka has known for several centuries. He is known best for his profound knowledge of the Sinhala language and literary work. Munidasa was born on 25 July 1887 in Idigasaara, Dickwella in the Matara District. He was the 12 th of 13 children. His mother was Palavinnage Dona Gimara Muthukumarana (or Dona Baba Nona Muthukumarana) and father Abious (or Abiyes) kumaranatunga was a physician practicing indigenous medicine who kept invaluable Pali and Sanskrit manuscripts on Ayurveda, Astrology and Buddhism.",
+  			"image":"https://firebasestorage.googleapis.com/v0/b/vipinfo-76294.appspot.com/o/vipProfile%2Fkumaratunga-munidasa.jpg?alt=media&token=06892a8e-ee7a-469f-ae97-0991760cfef4",
+  			"reference": [ "www.wikipedia.com/reference","www.wikipedia.com/reference2" ],
+  			"comment": [
+  				{  
+  					"user":"heshan", 
+            "time":"May 4 at 2:50pm",
+  					"comment": "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
+  				}, { 
+	  				"user":"john", 
+            "time":"July 10 at 9:41pm",
+	  				"comment": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia"
+  				}
+  			]	
+  		},
+
+  		"John De Silva memorial theatre":{
+  			"placeId":"002", 
+  			"latitude":"6.89984236", 
+  			"longitude":"79.87275124", 
+  			"place":"consectetur adipiscing", 
+  			"person": "John De Silva", 
+  			"description":"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  			"image":"https://firebasestorage.googleapis.com/v0/b/vipinfo-76294.appspot.com/o/vipProfile%2Fjohn-de-silva.jpg?alt=media&token=995f92fe-c7c0-4f88-b7cd-84f90aa603d1",
+  			"reference": [ "www.wikipedia.com/reference3" ],
+  			"comment": [
+  				{ 
+  					"user":"john", 
+            "time":"June 10 at 11:41am",
+  					"comment": "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
+  				}, {  
+            "user":"heshan", 
+            "time":"June 5 at 12:54pm",
+            "comment": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia"
+          }
+  			]	
+  		},
+
+      "Arthur V Dias mawatha":{
+        "placeId":"003", 
+        "latitude":"6.89984236", 
+        "longitude":"79.87275124", 
+        "place":"constur adiscing", 
+        "person": "Arthur V. Dias", 
+        "description":"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/vipinfo-76294.appspot.com/o/vipProfile%2Farthur-v-dias.jpg?alt=media&token=4ad96dea-bdc1-4f6e-98f4-236f034a0285",
+        "reference": [ "www.wikipedia.com/reference3" ],
+        "comment": [
+          {  
+            "user":"heshan", 
+            "time":"June 5 at 9:51am",
+            "comment": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip."
+          }
+        ] 
+      }
+
+  	}
+  	
+}
