@@ -2,8 +2,8 @@
     <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in favorite-content">
 
     <div class = "favorite-container">   
-        <div ng-repeat="place in favorite|limitTo:favLength" class = "place-image item card card-gallery fav-image">
-            <div class="ink dark-bg header">
+        <div ng-repeat="place in favorite|limitTo:favLength" class = "item card card-gallery fav-image">
+            <div  ui-sref="app.place" class="ink dark-bg header">
                 <h2 class = "placeHeader">{{place.person}}</h2>
                 <img class="full-image" ng-src={{place.image}}>
             </div>
@@ -15,6 +15,9 @@
                 <a class="tab-item stable-bg positive-900">
                     <i class="icon ion-chatbubbles"></i>
                     <span class = "place-font1" >{{place.comment.length}}</span>
+                </a>
+                <a class="tab-item stable-bg dark">
+                    <i class="icon ion-trash-a"></i>
                 </a>
             </div>
         </div>

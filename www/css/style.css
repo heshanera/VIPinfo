@@ -124,12 +124,12 @@ p {
 
 .fav-image {
     display: inline-block;
-    left:0;
-    right:10px;
+    left:5%;
+    /*right:10px;*/
     margin: auto;
     padding: 0;
     padding-left: 0px;
-    width: 87%;
+    width: 90%;
     margin-bottom: 20px;
     /*background-color: #B71C1C;*/
 }
@@ -162,8 +162,8 @@ p {
 }
 
 .favorite-container{
-    margin-bottom: 40px;
-    padding-bottom: 40px;
+    margin-bottom: 20px !important;
+    padding-bottom: 20px !important;
 }
 
 /* Place
